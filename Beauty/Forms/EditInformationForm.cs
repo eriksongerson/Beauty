@@ -112,19 +112,19 @@ namespace Beauty.Forms
         {
             Regex regex = new Regex("^[А-ЯЁ][а-яё]{2,50}$");
 
-            string Surname = clientSurnameTextBox.Text;
+            string Surname = masterSurnameTextBox.Text;
             if (!regex.IsMatch(Surname))
             {
                 MessageBox.Show("Введите Фамилию в верном формате (формат: Иванов).");
                 return;
             }
-            string Name = clientNameTextBox.Text;
+            string Name = masterNameTextBox.Text;
             if (!regex.IsMatch(Name))
             {
                 MessageBox.Show("Введите Имя в верном формате (формат: Иван).");
                 return;
             }
-            string Patronymic = clientPatronymicTextBox.Text;
+            string Patronymic = masterPatronymicTextBox.Text;
             if (!regex.IsMatch(Patronymic))
             {
                 MessageBox.Show("Введите Отчество в верном формате (формат: Иванович).");
@@ -239,13 +239,25 @@ namespace Beauty.Forms
         private void editClientButton_Click(object sender, EventArgs e)
         {
 
-            Regex regex = new Regex("^[А-ЯЁ][а-яё]{2,50} [А-ЯЁ][а-яё]{2,50} [А-ЯЁ][а-яё]{2,50}$");
-            //string fullName = fullClientNameTextBox.Text;
-            //if (!regex.IsMatch(fullName))
-            //{
-            //    MessageBox.Show("Введите ФИО в верном формате (формат: Иванов Иван Иванович).");
-            //    return;
-            //}
+            Regex regex = new Regex("^[А-ЯЁ][а-яё]{2,50}$");
+            string Surname = clientSurnameTextBox.Text;
+            if (!regex.IsMatch(Surname))
+            {
+                MessageBox.Show("Введите Фамилию в верном формате (формат: Иванов).");
+                return;
+            }
+            string Name = clientNameTextBox.Text;
+            if (!regex.IsMatch(Name))
+            {
+                MessageBox.Show("Введите Имя в верном формате (формат: Иван).");
+                return;
+            }
+            string Patronymic = clientPatronymicTextBox.Text;
+            if (!regex.IsMatch(Patronymic))
+            {
+                MessageBox.Show("Введите Отчество в верном формате (формат: Иванович).");
+                return;
+            }
 
             regex = new Regex("^((8|\\+7)[\\- ]?)?(\\(?\\d{3}\\)?[\\- ]?)?[\\d\\- ]{7,10}$");
             string phone = phoneTextBox.Text;
@@ -257,7 +269,7 @@ namespace Beauty.Forms
 
             regex = new Regex("^[0-9]{1,2}$");
             string ageString = ageTextBox.Text;
-            if (regex.IsMatch(ageString))
+            if (!regex.IsMatch(ageString))
             {
                 MessageBox.Show("При указании возраста можно использовать только цифры.");
                 return;
@@ -269,9 +281,9 @@ namespace Beauty.Forms
                 return;
             }
 
-            //selectedClient.setFullName(fullName);
-            //selectedClient.phone = phone;
-            //selectedClient.age = age;
+            selectedClient.setFullName(Surname, Name, Patronymic);
+            selectedClient.phone = phone;
+            selectedClient.age = age;
 
             DatabaseHelper.editClient(selectedClient);
             selectedClient = null;

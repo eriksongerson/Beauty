@@ -41,7 +41,6 @@ namespace Beauty.Forms
         private void addMasterButton_Click(object sender, EventArgs e)
         {
             Regex regex = new Regex("^[А-ЯЁ][а-яё]{2,50}$");
-
             string Surname = masterSurnameTextBox.Text;
             if (!regex.IsMatch(Surname))
             {

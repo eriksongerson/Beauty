@@ -243,7 +243,6 @@ namespace Beauty
         {
             int id = DatabaseHelper.getId("SELECT MAX(id) FROM entries");
             OleDbCommand oleDbCommand = new OleDbCommand($"INSERT INTO entries(`id`,`id_master`, `id_client`, `date`, `time`, `price`) VALUES ({ id }, {entry.master.id}, {entry.client.id}, '{ entry.date }', '{ entry.time }', { entry.price }) ", oleDbConnection);
-            MessageBox.Show(oleDbCommand.CommandText);
             oleDbConnection.Open();
             oleDbCommand.ExecuteNonQuery();
             oleDbConnection.Close();

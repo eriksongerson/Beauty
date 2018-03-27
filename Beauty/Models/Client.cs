@@ -48,12 +48,11 @@ namespace Beauty
         {
             return this.secondName + " " + this.firstName + " " + patronymic;
         }
-        public void setFullName(string fullName)
+        public void setFullName(string secondName, string firstName, string patronymic)
         {
-            var name = fullName.Split(' ');
-            this.secondName = name[0];
-            this.firstName = name[1];
-            this.patronymic = name[2];
+            this.secondName = secondName;
+            this.firstName = firstName;
+            this.patronymic = patronymic;
         }
 
     }

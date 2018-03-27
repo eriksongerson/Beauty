@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Beauty.Forms
@@ -9,6 +10,9 @@ namespace Beauty.Forms
         private static List<Master> masters;
         private static List<Client> clients;
 
+        string hardwiredDate;
+        string hardwiredTime;
+
         public NewEntry()
         {
             InitializeComponent();
@@ -16,6 +20,9 @@ namespace Beauty.Forms
 
         private void NewEntry_Load(object sender, EventArgs e)
         {
+            hardwiredDate = dateMaskedTextBox.Text;
+            hardwiredTime = timeMaskedTextBox.Text;
+
             masters = DatabaseHelper.getMasters();
             clients = DatabaseHelper.getClients();
 
@@ -54,7 +61,6 @@ namespace Beauty.Forms
 
         private void makeEntryButton_Click(object sender, EventArgs e)
         {
-
             string priceLine = priceTextBox.Text;
             if (priceLine == "")
             {
@@ -89,8 +95,21 @@ namespace Beauty.Forms
                 }
             }
 
-            string date = dateTimePicker.Text.Split('-')[0].Trim();
-            string time = dateTimePicker.Text.Split('-')[1].Trim();
+            Regex regex = new Regex("^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\\d\\d$");
+            string date = dateMaskedTextBox.Text;
+            if (!regex.IsMatch(date))
+            {
+                MessageBox.Show("Дата записи введена некорректно.");
+                return;
+            }
+
+            regex = new Regex("^(0[0-9]|1[0-9]|2[0-3])(:[0-5][0-9])$");
+            string time = timeMaskedTextBox.Text;
+            if (!regex.IsMatch(time))
+            {
+                MessageBox.Show("Время записи введено некорректно.");
+                return;
+            }
 
             Entry entry;
             if (master != null && client != null)
@@ -124,9 +143,23 @@ namespace Beauty.Forms
             checkForButton();
         }
 
+        private void dateMaskedTextBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            checkForButton();
+        }
+
+        private void timeMaskedTextBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            checkForButton();
+        }
+
         private void checkForButton()
         {
-            if(clientComboBox.SelectedIndex != -1 && masterComboBox.SelectedIndex != -1 && priceTextBox.Text != "")
+            if(clientComboBox.SelectedIndex != -1 
+                && masterComboBox.SelectedIndex != -1
+                && priceTextBox.Text != "" 
+                && dateMaskedTextBox.Text != hardwiredDate
+                && timeMaskedTextBox.Text != hardwiredTime)
             {
                 makeEntryButton.Enabled = true;
             }else

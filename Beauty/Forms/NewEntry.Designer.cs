@@ -37,9 +37,10 @@
             this.priceTextBox = new System.Windows.Forms.TextBox();
             this.makeEntryButton = new System.Windows.Forms.Button();
             this.newClientButton = new System.Windows.Forms.Button();
-            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.dateMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.timeMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -61,7 +62,7 @@
             this.masterComboBox.Location = new System.Drawing.Point(12, 35);
             this.masterComboBox.Name = "masterComboBox";
             this.masterComboBox.Size = new System.Drawing.Size(659, 28);
-            this.masterComboBox.TabIndex = 1;
+            this.masterComboBox.TabIndex = 0;
             this.masterComboBox.SelectedIndexChanged += new System.EventHandler(this.masterComboBox_SelectedIndexChanged);
             // 
             // label2
@@ -92,7 +93,7 @@
             this.clientComboBox.Location = new System.Drawing.Point(12, 92);
             this.clientComboBox.Name = "clientComboBox";
             this.clientComboBox.Size = new System.Drawing.Size(659, 28);
-            this.clientComboBox.TabIndex = 4;
+            this.clientComboBox.TabIndex = 2;
             this.clientComboBox.SelectedIndexChanged += new System.EventHandler(this.clientComboBox_SelectedIndexChanged);
             // 
             // label4
@@ -112,7 +113,7 @@
             this.priceTextBox.MaxLength = 5;
             this.priceTextBox.Name = "priceTextBox";
             this.priceTextBox.Size = new System.Drawing.Size(93, 26);
-            this.priceTextBox.TabIndex = 8;
+            this.priceTextBox.TabIndex = 5;
             this.priceTextBox.TextChanged += new System.EventHandler(this.priceTextBox_TextChanged);
             this.priceTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.priceTextBox_KeyPress);
             // 
@@ -124,7 +125,7 @@
             this.makeEntryButton.Location = new System.Drawing.Point(463, 126);
             this.makeEntryButton.Name = "makeEntryButton";
             this.makeEntryButton.Size = new System.Drawing.Size(208, 29);
-            this.makeEntryButton.TabIndex = 9;
+            this.makeEntryButton.TabIndex = 6;
             this.makeEntryButton.Text = "Записаться";
             this.makeEntryButton.UseVisualStyleBackColor = true;
             this.makeEntryButton.Click += new System.EventHandler(this.makeEntryButton_Click);
@@ -135,22 +136,10 @@
             this.newClientButton.Location = new System.Drawing.Point(548, 64);
             this.newClientButton.Name = "newClientButton";
             this.newClientButton.Size = new System.Drawing.Size(123, 27);
-            this.newClientButton.TabIndex = 10;
+            this.newClientButton.TabIndex = 1;
             this.newClientButton.Text = "Новый";
             this.newClientButton.UseVisualStyleBackColor = true;
             this.newClientButton.Click += new System.EventHandler(this.newClientButton_Click);
-            // 
-            // dateTimePicker
-            // 
-            this.dateTimePicker.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.dateTimePicker.CustomFormat = "dd/MM/yyyy - HH:mm";
-            this.dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker.Location = new System.Drawing.Point(209, 126);
-            this.dateTimePicker.MinDate = new System.DateTime(2018, 3, 14, 0, 0, 0, 0);
-            this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePicker.TabIndex = 11;
             // 
             // label5
             // 
@@ -168,10 +157,32 @@
             this.button1.Location = new System.Drawing.Point(463, 160);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(208, 29);
-            this.button1.TabIndex = 13;
+            this.button1.TabIndex = 7;
             this.button1.Text = "Назад";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dateMaskedTextBox
+            // 
+            this.dateMaskedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dateMaskedTextBox.Location = new System.Drawing.Point(209, 126);
+            this.dateMaskedTextBox.Mask = "00/00/0000";
+            this.dateMaskedTextBox.Name = "dateMaskedTextBox";
+            this.dateMaskedTextBox.Size = new System.Drawing.Size(93, 26);
+            this.dateMaskedTextBox.TabIndex = 3;
+            this.dateMaskedTextBox.ValidatingType = typeof(System.DateTime);
+            this.dateMaskedTextBox.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.dateMaskedTextBox_MaskInputRejected);
+            // 
+            // timeMaskedTextBox
+            // 
+            this.timeMaskedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.timeMaskedTextBox.Location = new System.Drawing.Point(312, 126);
+            this.timeMaskedTextBox.Mask = "00:00";
+            this.timeMaskedTextBox.Name = "timeMaskedTextBox";
+            this.timeMaskedTextBox.Size = new System.Drawing.Size(49, 26);
+            this.timeMaskedTextBox.TabIndex = 4;
+            this.timeMaskedTextBox.ValidatingType = typeof(System.DateTime);
+            this.timeMaskedTextBox.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.timeMaskedTextBox_MaskInputRejected);
             // 
             // NewEntry
             // 
@@ -180,9 +191,10 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(683, 201);
             this.ControlBox = false;
+            this.Controls.Add(this.timeMaskedTextBox);
+            this.Controls.Add(this.dateMaskedTextBox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.newClientButton);
             this.Controls.Add(this.makeEntryButton);
             this.Controls.Add(this.priceTextBox);
@@ -212,8 +224,9 @@
         private System.Windows.Forms.TextBox priceTextBox;
         private System.Windows.Forms.Button makeEntryButton;
         private System.Windows.Forms.Button newClientButton;
-        private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.MaskedTextBox dateMaskedTextBox;
+        private System.Windows.Forms.MaskedTextBox timeMaskedTextBox;
     }
 }
