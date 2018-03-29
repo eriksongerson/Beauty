@@ -52,11 +52,7 @@ namespace Beauty.Forms
 
         private void priceTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            var c = e.KeyChar;
-            if (!Char.IsNumber(c) && c != 8)
-            {
-                e.Handled = true;
-            }
+            e.Handled = !char.IsNumber(e.KeyChar) || e.KeyChar != 8;
         }
 
         private void makeEntryButton_Click(object sender, EventArgs e)
@@ -166,6 +162,16 @@ namespace Beauty.Forms
             {
                 makeEntryButton.Enabled = false;
             }
+        }
+
+        private void dateMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsNumber(e.KeyChar) || e.KeyChar != 8;
+        }
+
+        private void timeMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsNumber(e.KeyChar) || e.KeyChar != 8;
         }
     }
 }
