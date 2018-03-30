@@ -104,32 +104,26 @@
             // 
             // masterPatronymicTextBox
             // 
-            this.masterPatronymicTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.masterPatronymicTextBox.Location = new System.Drawing.Point(208, 333);
+            this.masterPatronymicTextBox.Location = new System.Drawing.Point(141, 333);
             this.masterPatronymicTextBox.MaxLength = 50;
             this.masterPatronymicTextBox.Name = "masterPatronymicTextBox";
-            this.masterPatronymicTextBox.Size = new System.Drawing.Size(574, 26);
+            this.masterPatronymicTextBox.Size = new System.Drawing.Size(641, 26);
             this.masterPatronymicTextBox.TabIndex = 30;
             // 
             // masterNameTextBox
             // 
-            this.masterNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.masterNameTextBox.Location = new System.Drawing.Point(208, 293);
+            this.masterNameTextBox.Location = new System.Drawing.Point(141, 293);
             this.masterNameTextBox.MaxLength = 50;
             this.masterNameTextBox.Name = "masterNameTextBox";
-            this.masterNameTextBox.Size = new System.Drawing.Size(574, 26);
+            this.masterNameTextBox.Size = new System.Drawing.Size(641, 26);
             this.masterNameTextBox.TabIndex = 29;
             // 
             // masterSurnameTextBox
             // 
-            this.masterSurnameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.masterSurnameTextBox.Location = new System.Drawing.Point(208, 254);
+            this.masterSurnameTextBox.Location = new System.Drawing.Point(141, 254);
             this.masterSurnameTextBox.MaxLength = 50;
             this.masterSurnameTextBox.Name = "masterSurnameTextBox";
-            this.masterSurnameTextBox.Size = new System.Drawing.Size(574, 26);
+            this.masterSurnameTextBox.Size = new System.Drawing.Size(641, 26);
             this.masterSurnameTextBox.TabIndex = 28;
             // 
             // label9
@@ -138,7 +132,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.Location = new System.Drawing.Point(8, 332);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(194, 28);
+            this.label9.Size = new System.Drawing.Size(127, 28);
             this.label9.TabIndex = 27;
             this.label9.Text = "Отчество:";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -149,7 +143,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.Location = new System.Drawing.Point(8, 292);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(194, 28);
+            this.label8.Size = new System.Drawing.Size(127, 28);
             this.label8.TabIndex = 26;
             this.label8.Text = "Имя:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -160,7 +154,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Location = new System.Drawing.Point(8, 253);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(194, 28);
+            this.label1.Size = new System.Drawing.Size(127, 28);
             this.label1.TabIndex = 25;
             this.label1.Text = "Фамилия:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -289,32 +283,28 @@
             // 
             // clientPatronymicTextBox
             // 
-            this.clientPatronymicTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.clientPatronymicTextBox.Location = new System.Drawing.Point(206, 333);
+
+            this.clientPatronymicTextBox.Location = new System.Drawing.Point(150, 333);
+
             this.clientPatronymicTextBox.MaxLength = 50;
             this.clientPatronymicTextBox.Name = "clientPatronymicTextBox";
-            this.clientPatronymicTextBox.Size = new System.Drawing.Size(574, 26);
+            this.clientPatronymicTextBox.Size = new System.Drawing.Size(630, 26);
             this.clientPatronymicTextBox.TabIndex = 30;
             // 
             // clientNameTextBox
             // 
-            this.clientNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.clientNameTextBox.Location = new System.Drawing.Point(206, 293);
+            this.clientNameTextBox.Location = new System.Drawing.Point(150, 293);
             this.clientNameTextBox.MaxLength = 50;
             this.clientNameTextBox.Name = "clientNameTextBox";
-            this.clientNameTextBox.Size = new System.Drawing.Size(574, 26);
+            this.clientNameTextBox.Size = new System.Drawing.Size(630, 26);
             this.clientNameTextBox.TabIndex = 29;
             // 
             // clientSurnameTextBox
             // 
-            this.clientSurnameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.clientSurnameTextBox.Location = new System.Drawing.Point(206, 254);
+            this.clientSurnameTextBox.Location = new System.Drawing.Point(150, 254);
             this.clientSurnameTextBox.MaxLength = 50;
             this.clientSurnameTextBox.Name = "clientSurnameTextBox";
-            this.clientSurnameTextBox.Size = new System.Drawing.Size(574, 26);
+            this.clientSurnameTextBox.Size = new System.Drawing.Size(630, 26);
             this.clientSurnameTextBox.TabIndex = 28;
             // 
             // label5
@@ -323,7 +313,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.Location = new System.Drawing.Point(6, 332);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(194, 28);
+            this.label5.Size = new System.Drawing.Size(138, 28);
             this.label5.TabIndex = 27;
             this.label5.Text = "Отчество:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -334,7 +324,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.Location = new System.Drawing.Point(6, 292);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(194, 28);
+            this.label10.Size = new System.Drawing.Size(138, 28);
             this.label10.TabIndex = 26;
             this.label10.Text = "Имя:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -345,7 +335,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.Location = new System.Drawing.Point(6, 253);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(194, 28);
+            this.label11.Size = new System.Drawing.Size(138, 28);
             this.label11.TabIndex = 25;
             this.label11.Text = "Фамилия:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -374,8 +364,7 @@
             // 
             // ageTextBox
             // 
-            this.ageTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ageTextBox.Location = new System.Drawing.Point(726, 371);
+            this.ageTextBox.Location = new System.Drawing.Point(588, 371);
             this.ageTextBox.MaxLength = 3;
             this.ageTextBox.Name = "ageTextBox";
             this.ageTextBox.Size = new System.Drawing.Size(54, 26);
@@ -391,8 +380,7 @@
             // 
             // label7
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.Location = new System.Drawing.Point(558, 371);
+            this.label7.Location = new System.Drawing.Point(420, 371);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(162, 26);
             this.label7.TabIndex = 6;
@@ -439,6 +427,9 @@
             this.ClientSize = new System.Drawing.Size(800, 506);
             this.ControlBox = false;
             this.Controls.Add(this.informationTabControl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AddInformationForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
