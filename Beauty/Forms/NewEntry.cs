@@ -119,6 +119,8 @@ namespace Beauty.Forms
                 masterComboBox.SelectedIndex = -1;
                 clientComboBox.SelectedIndex = -1;
                 priceTextBox.Text = "";
+                dateMaskedTextBox.Text = "";
+                timeMaskedTextBox.Text = "";
                 makeEntryButton.Enabled = false;
             }
         }

@@ -60,12 +60,11 @@ namespace Beauty.Forms
                 return;
             }
 
-            regex = new Regex("^[0-9]{1,2}$");
+            regex = new Regex("^[0-9]{1,2}(\\.(0|1|2|3|4|5|6|7|8|9|10|11|12))?$");
             string experienceString = experienceTextBox.Text;
             if (!regex.IsMatch(experienceString))
             {
-                MessageBox.Show("При указании стажа можно использовать только цифры.");
-                return;
+
             }
             int experience = Convert.ToInt32(experienceString);
             if(experience < 0 || experience >= 100)
@@ -184,7 +183,12 @@ namespace Beauty.Forms
 
         }
 
-        private void addMasterDataGridView_SelectionChanged(object sender, EventArgs e)
+        private void experienceTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }

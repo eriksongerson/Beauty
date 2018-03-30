@@ -133,11 +133,11 @@
             // newClientButton
             // 
             this.newClientButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.newClientButton.Location = new System.Drawing.Point(548, 64);
+            this.newClientButton.Location = new System.Drawing.Point(463, 64);
             this.newClientButton.Name = "newClientButton";
-            this.newClientButton.Size = new System.Drawing.Size(123, 27);
+            this.newClientButton.Size = new System.Drawing.Size(208, 27);
             this.newClientButton.TabIndex = 1;
-            this.newClientButton.Text = "Новый";
+            this.newClientButton.Text = "Новый клиент";
             this.newClientButton.UseVisualStyleBackColor = true;
             this.newClientButton.Click += new System.EventHandler(this.newClientButton_Click);
             // 
@@ -204,7 +204,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.masterComboBox);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "NewEntry";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Записать на посещение";
             this.Load += new System.EventHandler(this.NewEntry_Load);
