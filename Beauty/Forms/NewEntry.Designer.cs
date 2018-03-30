@@ -190,7 +190,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(683, 201);
-            this.ControlBox = false;
             this.Controls.Add(this.timeMaskedTextBox);
             this.Controls.Add(this.dateMaskedTextBox);
             this.Controls.Add(this.button1);

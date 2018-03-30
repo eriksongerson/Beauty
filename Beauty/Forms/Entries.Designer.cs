@@ -83,7 +83,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(739, 467);
-            this.ControlBox = false;
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.entriesDataGridView);
