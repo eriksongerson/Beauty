@@ -47,6 +47,7 @@ namespace Beauty.Forms
         {
             AddInformationForm addInformationForm = new AddInformationForm();
             Hide();
+            addInformationForm.nextWay = "entry";
             if(addInformationForm.ShowDialog() != DialogResult.OK)
                 Close();
         }
