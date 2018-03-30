@@ -133,11 +133,11 @@
             // newClientButton
             // 
             this.newClientButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.newClientButton.Location = new System.Drawing.Point(548, 64);
+            this.newClientButton.Location = new System.Drawing.Point(463, 64);
             this.newClientButton.Name = "newClientButton";
-            this.newClientButton.Size = new System.Drawing.Size(123, 27);
+            this.newClientButton.Size = new System.Drawing.Size(208, 27);
             this.newClientButton.TabIndex = 1;
-            this.newClientButton.Text = "Новый";
+            this.newClientButton.Text = "Новый клиент";
             this.newClientButton.UseVisualStyleBackColor = true;
             this.newClientButton.Click += new System.EventHandler(this.newClientButton_Click);
             // 
@@ -172,6 +172,7 @@
             this.dateMaskedTextBox.TabIndex = 3;
             this.dateMaskedTextBox.ValidatingType = typeof(System.DateTime);
             this.dateMaskedTextBox.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.dateMaskedTextBox_MaskInputRejected);
+            this.dateMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateMaskedTextBox_KeyPress);
             // 
             // timeMaskedTextBox
             // 
@@ -183,6 +184,7 @@
             this.timeMaskedTextBox.TabIndex = 4;
             this.timeMaskedTextBox.ValidatingType = typeof(System.DateTime);
             this.timeMaskedTextBox.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.timeMaskedTextBox_MaskInputRejected);
+            this.timeMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.timeMaskedTextBox_KeyPress);
             // 
             // NewEntry
             // 
