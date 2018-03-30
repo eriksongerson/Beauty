@@ -144,13 +144,12 @@ namespace Beauty.Forms
         {
             checkForButton();
         }
-
-        private void dateMaskedTextBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        private void dateMaskedTextBox_TextChanged(object sender, EventArgs e)
         {
             checkForButton();
         }
 
-        private void timeMaskedTextBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        private void timeMaskedTextBox_TextChanged(object sender, EventArgs e)
         {
             checkForButton();
         }

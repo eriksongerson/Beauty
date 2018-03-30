@@ -171,8 +171,7 @@
             this.dateMaskedTextBox.Size = new System.Drawing.Size(93, 26);
             this.dateMaskedTextBox.TabIndex = 3;
             this.dateMaskedTextBox.ValidatingType = typeof(System.DateTime);
-            this.dateMaskedTextBox.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.dateMaskedTextBox_MaskInputRejected);
-            this.dateMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateMaskedTextBox_KeyPress);
+            this.dateMaskedTextBox.TextChanged += new System.EventHandler(this.dateMaskedTextBox_TextChanged);
             // 
             // timeMaskedTextBox
             // 
@@ -183,8 +182,7 @@
             this.timeMaskedTextBox.Size = new System.Drawing.Size(49, 26);
             this.timeMaskedTextBox.TabIndex = 4;
             this.timeMaskedTextBox.ValidatingType = typeof(System.DateTime);
-            this.timeMaskedTextBox.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.timeMaskedTextBox_MaskInputRejected);
-            this.timeMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.timeMaskedTextBox_KeyPress);
+            this.timeMaskedTextBox.TextChanged += new System.EventHandler(this.timeMaskedTextBox_TextChanged);
             // 
             // NewEntry
             // 
