@@ -394,7 +394,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 506);
-            this.ControlBox = false;
             this.Controls.Add(this.informationTabControl);
             this.Name = "AddInformationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

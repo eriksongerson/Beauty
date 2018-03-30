@@ -46,8 +46,9 @@ namespace Beauty.Forms
         private void newClientButton_Click(object sender, EventArgs e)
         {
             AddInformationForm addInformationForm = new AddInformationForm();
-            addInformationForm.Show();
-            this.Close();
+            Hide();
+            if(addInformationForm.ShowDialog() != DialogResult.OK)
+                Close();
         }
 
         private void priceTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -125,7 +126,10 @@ namespace Beauty.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            StartupForm startupForm = new StartupForm();
+            Hide();
+            if(startupForm.ShowDialog() != DialogResult.OK)
+                Close();
         }
 
         private void masterComboBox_SelectedIndexChanged(object sender, EventArgs e)

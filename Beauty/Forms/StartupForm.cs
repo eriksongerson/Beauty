@@ -18,25 +18,33 @@ namespace Beauty.Forms
         private void addInformationButton_Click(object sender, EventArgs e)
         {
             AddInformationForm addInformationForm = new AddInformationForm();
-            addInformationForm.ShowDialog();
+            Hide();
+            if(addInformationForm.ShowDialog() != DialogResult.OK)
+                Close();
         }
 
         private void editInformationButton_Click(object sender, EventArgs e)
         {
             EditInformationForm editInformationForm = new EditInformationForm();
-            editInformationForm.ShowDialog();
+            Hide();
+            if(editInformationForm.ShowDialog() != DialogResult.OK)
+                Close();
         }
 
         private void entryOnVisitButton_Click(object sender, EventArgs e)
         {
             NewEntry newEntry = new NewEntry();
-            newEntry.ShowDialog();
+            Hide();
+            if(newEntry.ShowDialog() != DialogResult.OK)
+                Close();
         }
 
         private void historyButton_Click(object sender, EventArgs e)
         {
             Entries entries = new Entries();
-            entries.ShowDialog();
+            Hide();
+            if(entries.ShowDialog() != DialogResult.OK)
+                Close();
         }
     }
 }
