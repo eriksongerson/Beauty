@@ -204,7 +204,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.masterComboBox);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "NewEntry";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Записать на посещение";
             this.Load += new System.EventHandler(this.NewEntry_Load);
