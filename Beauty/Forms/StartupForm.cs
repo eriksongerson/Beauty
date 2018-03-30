@@ -19,6 +19,7 @@ namespace Beauty.Forms
         {
             AddInformationForm addInformationForm = new AddInformationForm();
             Hide();
+            addInformationForm.nextWay = "startup";
             if(addInformationForm.ShowDialog() != DialogResult.OK)
                 Close();
         }

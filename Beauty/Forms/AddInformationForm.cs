@@ -6,6 +6,8 @@ namespace Beauty.Forms
 {
     public partial class AddInformationForm : Form
     {
+        public string nextWay = "";
+
         public AddInformationForm()
         {
             InitializeComponent();
@@ -30,18 +32,30 @@ namespace Beauty.Forms
 
         private void button3_Click(object sender, EventArgs e)
         {
-            StartupForm startupForm = new StartupForm();
-            Hide();
-            if(startupForm.ShowDialog() != DialogResult.OK)
-                Close();
+            CloseThis();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            StartupForm startupForm = new StartupForm();
-            Hide();
-            if(startupForm.ShowDialog() != DialogResult.OK)
-                Close();
+            CloseThis();
+        }
+
+        private void CloseThis()
+        {
+            if (nextWay == "startup")
+            {
+                StartupForm startupForm = new StartupForm();
+                Hide();
+                if(startupForm.ShowDialog() != DialogResult.OK)
+                    Close();
+            }
+            if (nextWay == "entry")
+            {
+                NewEntry newEntry = new NewEntry();
+                Hide();
+                if(newEntry.ShowDialog() != DialogResult.OK)
+                    Close();
+            }
         }
 
         private void addMasterButton_Click(object sender, EventArgs e)
