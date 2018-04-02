@@ -54,7 +54,7 @@ namespace Beauty.Forms
 
         private void priceTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsNumber(e.KeyChar) || e.KeyChar != 8;
+            e.Handled = char.IsNumber(e.KeyChar) || e.KeyChar == 8 ? false : true;
         }
 
         private void makeEntryButton_Click(object sender, EventArgs e)
