@@ -222,6 +222,7 @@
             this.experienceTextBox.Name = "experienceTextBox";
             this.experienceTextBox.Size = new System.Drawing.Size(57, 26);
             this.experienceTextBox.TabIndex = 4;
+            this.experienceTextBox.TextChanged += new System.EventHandler(this.experienceTextBox_TextChanged);
             this.experienceTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.experienceTextBox_KeyPress);
             // 
             // label2
@@ -283,9 +284,7 @@
             // 
             // clientPatronymicTextBox
             // 
-
             this.clientPatronymicTextBox.Location = new System.Drawing.Point(150, 333);
-
             this.clientPatronymicTextBox.MaxLength = 50;
             this.clientPatronymicTextBox.Name = "clientPatronymicTextBox";
             this.clientPatronymicTextBox.Size = new System.Drawing.Size(630, 26);

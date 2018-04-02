@@ -160,7 +160,6 @@ namespace Beauty.Forms
                 MessageBox.Show("Введите Отчество в верном формате (формат: Иванович).");
                 return;
             }
-            
 
             regex = new Regex("^((8|\\+7)[\\- ]?)?(\\(?\\d{3}\\)?[\\- ]?)?[\\d\\- ]{7,10}$");
             string phone = phoneTextBox.Text;
@@ -203,14 +202,25 @@ namespace Beauty.Forms
 
         }
 
-        private void experienceTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void experienceTextBox_TextChanged(object sender, EventArgs e)
         {
-            
+            var experienceString = experienceTextBox.Text;
+            if (!experienceString.Contains(".") && experienceString.Length >= 2)
+            {
+                experienceString = experienceString.Substring(0,2) + "." + experienceString.Substring(2);
+                experienceTextBox.Text = experienceString;
+                experienceTextBox.Select(experienceString.Length, 0);
+            }
         }
 
-        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        private void experienceTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            string ch = e.KeyChar.ToString();
+            Regex regex = new Regex("^[0-9]{1,2}(\\.)?([0-9]{1,2})?$");
+            if (!regex.IsMatch(ch) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }
