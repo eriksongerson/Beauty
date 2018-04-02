@@ -107,33 +107,33 @@
             // 
             // masterPatronymicTextBox
             // 
-            this.masterPatronymicTextBox.Location = new System.Drawing.Point(208, 343);
+            this.masterPatronymicTextBox.Location = new System.Drawing.Point(139, 343);
             this.masterPatronymicTextBox.MaxLength = 50;
             this.masterPatronymicTextBox.Name = "masterPatronymicTextBox";
-            this.masterPatronymicTextBox.Size = new System.Drawing.Size(574, 26);
+            this.masterPatronymicTextBox.Size = new System.Drawing.Size(643, 26);
             this.masterPatronymicTextBox.TabIndex = 24;
             // 
             // masterNameTextBox
             // 
-            this.masterNameTextBox.Location = new System.Drawing.Point(208, 303);
+            this.masterNameTextBox.Location = new System.Drawing.Point(139, 303);
             this.masterNameTextBox.MaxLength = 50;
             this.masterNameTextBox.Name = "masterNameTextBox";
-            this.masterNameTextBox.Size = new System.Drawing.Size(574, 26);
+            this.masterNameTextBox.Size = new System.Drawing.Size(643, 26);
             this.masterNameTextBox.TabIndex = 23;
             // 
             // masterSurnameTextBox
             // 
-            this.masterSurnameTextBox.Location = new System.Drawing.Point(208, 264);
+            this.masterSurnameTextBox.Location = new System.Drawing.Point(139, 264);
             this.masterSurnameTextBox.MaxLength = 50;
             this.masterSurnameTextBox.Name = "masterSurnameTextBox";
-            this.masterSurnameTextBox.Size = new System.Drawing.Size(574, 26);
+            this.masterSurnameTextBox.Size = new System.Drawing.Size(643, 26);
             this.masterSurnameTextBox.TabIndex = 22;
             // 
             // label9
             // 
             this.label9.Location = new System.Drawing.Point(8, 342);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(194, 28);
+            this.label9.Size = new System.Drawing.Size(125, 28);
             this.label9.TabIndex = 21;
             this.label9.Text = "Отчество:";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -142,7 +142,7 @@
             // 
             this.label8.Location = new System.Drawing.Point(8, 302);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(194, 28);
+            this.label8.Size = new System.Drawing.Size(125, 28);
             this.label8.TabIndex = 20;
             this.label8.Text = "Имя:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -226,7 +226,7 @@
             // 
             this.label1.Location = new System.Drawing.Point(8, 263);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(194, 28);
+            this.label1.Size = new System.Drawing.Size(125, 28);
             this.label1.TabIndex = 10;
             this.label1.Text = "Фамилия:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -275,33 +275,33 @@
             // 
             // clientPatronymicTextBox
             // 
-            this.clientPatronymicTextBox.Location = new System.Drawing.Point(208, 343);
+            this.clientPatronymicTextBox.Location = new System.Drawing.Point(152, 343);
             this.clientPatronymicTextBox.MaxLength = 50;
             this.clientPatronymicTextBox.Name = "clientPatronymicTextBox";
-            this.clientPatronymicTextBox.Size = new System.Drawing.Size(574, 26);
+            this.clientPatronymicTextBox.Size = new System.Drawing.Size(630, 26);
             this.clientPatronymicTextBox.TabIndex = 30;
             // 
             // clientNameTextBox
             // 
-            this.clientNameTextBox.Location = new System.Drawing.Point(208, 303);
+            this.clientNameTextBox.Location = new System.Drawing.Point(152, 303);
             this.clientNameTextBox.MaxLength = 50;
             this.clientNameTextBox.Name = "clientNameTextBox";
-            this.clientNameTextBox.Size = new System.Drawing.Size(574, 26);
+            this.clientNameTextBox.Size = new System.Drawing.Size(630, 26);
             this.clientNameTextBox.TabIndex = 29;
             // 
             // clientSurnameTextBox
             // 
-            this.clientSurnameTextBox.Location = new System.Drawing.Point(208, 264);
+            this.clientSurnameTextBox.Location = new System.Drawing.Point(152, 264);
             this.clientSurnameTextBox.MaxLength = 50;
             this.clientSurnameTextBox.Name = "clientSurnameTextBox";
-            this.clientSurnameTextBox.Size = new System.Drawing.Size(574, 26);
+            this.clientSurnameTextBox.Size = new System.Drawing.Size(630, 26);
             this.clientSurnameTextBox.TabIndex = 28;
             // 
             // label5
             // 
             this.label5.Location = new System.Drawing.Point(8, 342);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(194, 28);
+            this.label5.Size = new System.Drawing.Size(138, 28);
             this.label5.TabIndex = 27;
             this.label5.Text = "Отчество:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -310,7 +310,7 @@
             // 
             this.label10.Location = new System.Drawing.Point(8, 302);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(194, 28);
+            this.label10.Size = new System.Drawing.Size(138, 28);
             this.label10.TabIndex = 26;
             this.label10.Text = "Имя:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -319,7 +319,7 @@
             // 
             this.label11.Location = new System.Drawing.Point(8, 263);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(194, 28);
+            this.label11.Size = new System.Drawing.Size(138, 28);
             this.label11.TabIndex = 25;
             this.label11.Text = "Фамилия:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -412,11 +412,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 506);
-            this.ControlBox = false;
             this.Controls.Add(this.editInformationTabControl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EditInformationForm";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Изменение информации";
             this.Load += new System.EventHandler(this.EditInformationForm_Load);

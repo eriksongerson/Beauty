@@ -96,7 +96,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(342, 284);
-            this.ControlBox = false;
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.historyButton);
             this.Controls.Add(this.entryOnVisitButton);

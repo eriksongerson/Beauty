@@ -6,6 +6,8 @@ namespace Beauty.Forms
 {
     public partial class AddInformationForm : Form
     {
+        public string nextWay = "";
+
         public AddInformationForm()
         {
             InitializeComponent();
@@ -30,12 +32,30 @@ namespace Beauty.Forms
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Close();
+            CloseThis();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            CloseThis();
+        }
+
+        private void CloseThis()
+        {
+            if (nextWay == "startup")
+            {
+                StartupForm startupForm = new StartupForm();
+                Hide();
+                if(startupForm.ShowDialog() != DialogResult.OK)
+                    Close();
+            }
+            if (nextWay == "entry")
+            {
+                NewEntry newEntry = new NewEntry();
+                Hide();
+                if(newEntry.ShowDialog() != DialogResult.OK)
+                    Close();
+            }
         }
 
         private void addMasterButton_Click(object sender, EventArgs e)
@@ -60,12 +80,11 @@ namespace Beauty.Forms
                 return;
             }
 
-            regex = new Regex("^[0-9]{1,2}$");
+            regex = new Regex("^[0-9]{1,2}(\\.(0|1|2|3|4|5|6|7|8|9|10|11|12))?$");
             string experienceString = experienceTextBox.Text;
             if (!regex.IsMatch(experienceString))
             {
-                MessageBox.Show("При указании стажа можно использовать только цифры.");
-                return;
+
             }
             int experience = Convert.ToInt32(experienceString);
             if(experience < 0 || experience >= 100)
@@ -184,7 +203,12 @@ namespace Beauty.Forms
 
         }
 
-        private void addMasterDataGridView_SelectionChanged(object sender, EventArgs e)
+        private void experienceTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }

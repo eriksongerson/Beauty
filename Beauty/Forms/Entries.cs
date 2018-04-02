@@ -17,7 +17,10 @@ namespace Beauty.Forms
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            StartupForm startupForm = new StartupForm();
+            Hide();
+            if(startupForm.ShowDialog() != DialogResult.OK)
+                Close();
         }
 
         private void entriesDataGridView_SelectionChanged(object sender, EventArgs e)

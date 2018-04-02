@@ -133,11 +133,11 @@
             // newClientButton
             // 
             this.newClientButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.newClientButton.Location = new System.Drawing.Point(548, 64);
+            this.newClientButton.Location = new System.Drawing.Point(463, 64);
             this.newClientButton.Name = "newClientButton";
-            this.newClientButton.Size = new System.Drawing.Size(123, 27);
+            this.newClientButton.Size = new System.Drawing.Size(208, 27);
             this.newClientButton.TabIndex = 1;
-            this.newClientButton.Text = "Новый";
+            this.newClientButton.Text = "Новый клиент";
             this.newClientButton.UseVisualStyleBackColor = true;
             this.newClientButton.Click += new System.EventHandler(this.newClientButton_Click);
             // 
@@ -171,7 +171,7 @@
             this.dateMaskedTextBox.Size = new System.Drawing.Size(93, 26);
             this.dateMaskedTextBox.TabIndex = 3;
             this.dateMaskedTextBox.ValidatingType = typeof(System.DateTime);
-            this.dateMaskedTextBox.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.dateMaskedTextBox_MaskInputRejected);
+            this.dateMaskedTextBox.TextChanged += new System.EventHandler(this.dateMaskedTextBox_TextChanged);
             // 
             // timeMaskedTextBox
             // 
@@ -182,7 +182,7 @@
             this.timeMaskedTextBox.Size = new System.Drawing.Size(49, 26);
             this.timeMaskedTextBox.TabIndex = 4;
             this.timeMaskedTextBox.ValidatingType = typeof(System.DateTime);
-            this.timeMaskedTextBox.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.timeMaskedTextBox_MaskInputRejected);
+            this.timeMaskedTextBox.TextChanged += new System.EventHandler(this.timeMaskedTextBox_TextChanged);
             // 
             // NewEntry
             // 
@@ -190,7 +190,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(683, 201);
-            this.ControlBox = false;
             this.Controls.Add(this.timeMaskedTextBox);
             this.Controls.Add(this.dateMaskedTextBox);
             this.Controls.Add(this.button1);
@@ -204,7 +203,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.masterComboBox);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "NewEntry";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Записать на посещение";
             this.Load += new System.EventHandler(this.NewEntry_Load);

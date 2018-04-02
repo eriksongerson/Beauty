@@ -83,12 +83,18 @@ namespace Beauty.Forms
 
         private void backMasterButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            StartupForm startupForm = new StartupForm();
+            Hide();
+            if(startupForm.ShowDialog() != DialogResult.OK)
+                Close();
         }
 
         private void backClientButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            StartupForm startupForm = new StartupForm();
+            Hide();
+            if(startupForm.ShowDialog() != DialogResult.OK)
+                Close();
         }
 
         private void deleteMasterButton_Click(object sender, EventArgs e)
