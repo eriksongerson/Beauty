@@ -10,7 +10,7 @@ namespace Beauty
         public string secondName { get; set; }
         public string firstName { get; set; }
         public string patronymic { get; set; }
-        public int experience { get; set; }
+        public string experience { get; set; }
         public string position { get; set; }
 
         public Master()
@@ -18,7 +18,7 @@ namespace Beauty
 
         }
 
-        public Master(string Surname, string Name, string Patronymic, int experience, string position)
+        public Master(string Surname, string Name, string Patronymic, string experience, string position)
         {
             this.secondName = Surname;
             this.firstName = Name;
@@ -34,7 +34,7 @@ namespace Beauty
             }
         }
 
-        public Master(int id, int number, string secondName, string firstName, string patronymic, int experience, string position)
+        public Master(int id, int number, string secondName, string firstName, string patronymic, string experience, string position)
         {
             this.id = id;
             this.number = number;

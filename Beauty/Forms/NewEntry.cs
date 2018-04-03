@@ -46,17 +46,15 @@ namespace Beauty.Forms
         private void newClientButton_Click(object sender, EventArgs e)
         {
             AddInformationForm addInformationForm = new AddInformationForm();
-            addInformationForm.Show();
-            this.Close();
+            Hide();
+            addInformationForm.nextWay = "entry";
+            if(addInformationForm.ShowDialog() != DialogResult.OK)
+                Close();
         }
 
         private void priceTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            var c = e.KeyChar;
-            if (!Char.IsNumber(c) && c != 8)
-            {
-                e.Handled = true;
-            }
+            e.Handled = char.IsNumber(e.KeyChar) || e.KeyChar == 8 ? false : true;
         }
 
         private void makeEntryButton_Click(object sender, EventArgs e)
@@ -119,13 +117,18 @@ namespace Beauty.Forms
                 masterComboBox.SelectedIndex = -1;
                 clientComboBox.SelectedIndex = -1;
                 priceTextBox.Text = "";
+                dateMaskedTextBox.Text = "";
+                timeMaskedTextBox.Text = "";
                 makeEntryButton.Enabled = false;
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            StartupForm startupForm = new StartupForm();
+            Hide();
+            if(startupForm.ShowDialog() != DialogResult.OK)
+                Close();
         }
 
         private void masterComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -142,13 +145,12 @@ namespace Beauty.Forms
         {
             checkForButton();
         }
-
-        private void dateMaskedTextBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        private void dateMaskedTextBox_TextChanged(object sender, EventArgs e)
         {
             checkForButton();
         }
 
-        private void timeMaskedTextBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        private void timeMaskedTextBox_TextChanged(object sender, EventArgs e)
         {
             checkForButton();
         }
@@ -166,6 +168,16 @@ namespace Beauty.Forms
             {
                 makeEntryButton.Enabled = false;
             }
+        }
+
+        private void dateMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsNumber(e.KeyChar) || e.KeyChar != 8;
+        }
+
+        private void timeMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsNumber(e.KeyChar) || e.KeyChar != 8;
         }
     }
 }
