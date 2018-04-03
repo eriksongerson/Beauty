@@ -315,5 +315,52 @@ namespace Beauty.Forms
                 label12.Text = "месяца";
             }else { label12.Text = "месяцев"; }
         }
+        private void checkRussianWords(KeyPressEventArgs e)
+        {
+            string ch = e.KeyChar.ToString();
+            Regex regex = new Regex("[А-Яа-я ]");
+            if (!regex.IsMatch(ch) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
+        private void experienceTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+        private void textBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            checkRussianWords(e);
+        }
+        private void phoneTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = char.IsNumber(e.KeyChar) || char.IsPunctuation(e.KeyChar) || e.KeyChar == 8 || Convert.ToChar(e.KeyChar) == '+' ? false : true;
+        }
+        private void ageTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = char.IsNumber(e.KeyChar) || e.KeyChar == 8 ? false : true;
+        }
+        private void positionTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string ch = e.KeyChar.ToString();
+            Regex regex = new Regex("[А-Яа-я -]");
+            if (!regex.IsMatch(ch) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
+        private void textBox_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = (TextBox) sender;
+
+            string Line = textBox.Text;
+            var arr = Line.ToCharArray();
+            try{
+                arr[0] = char.ToUpper(arr[0]);
+            }catch(IndexOutOfRangeException){ }
+            textBox.Text = string.Concat(arr);
+
+            textBox.Select(textBox.Text.Length, 0);
+        }
     }
 }

@@ -172,6 +172,7 @@
             this.dateMaskedTextBox.TabIndex = 3;
             this.dateMaskedTextBox.ValidatingType = typeof(System.DateTime);
             this.dateMaskedTextBox.TextChanged += new System.EventHandler(this.dateMaskedTextBox_TextChanged);
+            this.dateMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateMaskedTextBox_KeyPress);
             // 
             // timeMaskedTextBox
             // 
@@ -183,6 +184,7 @@
             this.timeMaskedTextBox.TabIndex = 4;
             this.timeMaskedTextBox.ValidatingType = typeof(System.DateTime);
             this.timeMaskedTextBox.TextChanged += new System.EventHandler(this.timeMaskedTextBox_TextChanged);
+            this.timeMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.timeMaskedTextBox_KeyPress);
             // 
             // NewEntry
             // 

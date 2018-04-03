@@ -1,4 +1,4 @@
-﻿ using System;
+using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -61,26 +61,6 @@ namespace Beauty.Forms
 
         private void addMasterButton_Click(object sender, EventArgs e)
         {
-            Regex regex = new Regex("^[А-ЯЁ][а-яё]{2,50}$");
-            string Surname = masterSurnameTextBox.Text;
-            if (!regex.IsMatch(Surname))
-            {
-                MessageBox.Show("Введите Фамилию в верном формате (формат: Иванов).");
-                return;
-            }
-            string Name = masterNameTextBox.Text;
-            if (!regex.IsMatch(Name))
-            {
-                MessageBox.Show("Введите Имя в верном формате (формат: Иван).");
-                return;
-            }
-            string Patronymic = masterPatronymicTextBox.Text;
-            if (!regex.IsMatch(Patronymic))
-            {
-                MessageBox.Show("Введите Отчество в верном формате (формат: Иванович).");
-                return;
-            }
-
             regex = new Regex("^[A-Za-z0-9]+$");
             string position = positionTextBox.Text;
             if (regex.IsMatch(position))
@@ -90,6 +70,9 @@ namespace Beauty.Forms
             }
 
             string experience = yearsNumericUpDown.Value + "." + monthsNumericUpDown.Value;
+            string Surname = masterSurnameTextBox.Text;
+            string Name = masterNameTextBox.Text;
+            string Patronymic = masterPatronymicTextBox.Text;
 
             Master master = new Master(Surname, Name, Patronymic, experience, position);
 
@@ -131,48 +114,22 @@ namespace Beauty.Forms
 
         private void addClientButton_Click(object sender, EventArgs e)
         {
-            Regex regex = new Regex("^[А-ЯЁ][а-яё]{2,50}$");
-
-            string Surname = clientSurnameTextBox.Text;
-            if (!regex.IsMatch(Surname))
-            {
-                MessageBox.Show("Введите Фамилию в верном формате (формат: Иванов).");
-                return;
-            }
-            string Name = clientNameTextBox.Text;
-            if (!regex.IsMatch(Name))
-            {
-                MessageBox.Show("Введите Имя в верном формате (формат: Иван).");
-                return;
-            }
-            string Patronymic = clientPatronymicTextBox.Text;
-            if (!regex.IsMatch(Patronymic))
-            {
-                MessageBox.Show("Введите Отчество в верном формате (формат: Иванович).");
-                return;
-            }
-
-            regex = new Regex("^((8|\\+7)[\\- ]?)?(\\(?\\d{3}\\)?[\\- ]?)?[\\d\\- ]{7,10}$");
+            Regex regex = new Regex("^((8|\\+7)[\\- ]?)?(\\(?\\d{3}\\)?[\\- ]?)?[\\d\\- ]{7,10}$");
             string phone = phoneTextBox.Text;
             if (!regex.IsMatch(phone))
             {
                 MessageBox.Show("Введите номер в правильном формате");
                 return;
             }
-
-            regex = new Regex("^[0-9]{1,2}$");
-            string ageString = ageTextBox.Text;
-            if (!regex.IsMatch(ageString))
-            {
-                MessageBox.Show("При указании возраста можно использовать только цифры.");
-                return;
-            }
-            int age = Convert.ToInt32(ageString);
-            if(age > 120 || age < 0)
+            int age = Convert.ToInt32(ageTextBox.Text);
+            if(age > 120 || age <= 0)
             {
                 MessageBox.Show("Недопустимый возраст.");
                 return;
             }
+            string Surname = clientSurnameTextBox.Text;
+            string Name = clientNameTextBox.Text;
+            string Patronymic = clientPatronymicTextBox.Text;
 
             Client client = new Client(Surname, Name, Patronymic, phone, age);
 
@@ -207,6 +164,15 @@ namespace Beauty.Forms
                 label3.Text = "года";
             }else { label3.Text = "лет"; }
         }
+        private void checkRussianWords(KeyPressEventArgs e)
+        {
+            string ch = e.KeyChar.ToString();
+            Regex regex = new Regex("[А-Яа-я ]");
+            if (!regex.IsMatch(ch) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
 
         List<int> firstMonths = new List<int>(){  };//месяц
 
@@ -221,6 +187,41 @@ namespace Beauty.Forms
             {
                 label12.Text = "месяца";
             }else { label12.Text = "месяцев"; }
+        }
+        
+        private void textBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            checkRussianWords(e);
+        }
+        private void phoneTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = char.IsNumber(e.KeyChar) || char.IsPunctuation(e.KeyChar) || e.KeyChar == 8 || Convert.ToChar(e.KeyChar) == '+' ? false : true;
+        }
+        private void ageTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = char.IsNumber(e.KeyChar) || e.KeyChar == 8 ? false : true;
+        }
+        private void positionTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string ch = e.KeyChar.ToString();
+            Regex regex = new Regex("[А-Яа-я -]");
+            if (!regex.IsMatch(ch) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
+        private void textBox_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = (TextBox) sender;
+
+            string Line = textBox.Text;
+            var arr = Line.ToCharArray();
+            try{
+                arr[0] = char.ToUpper(arr[0]);
+            }catch(IndexOutOfRangeException){ }
+            textBox.Text = string.Concat(arr);
+
+            textBox.Select(textBox.Text.Length, 0);
         }
     }
 }

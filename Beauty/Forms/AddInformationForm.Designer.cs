@@ -115,6 +115,8 @@
             this.masterPatronymicTextBox.Name = "masterPatronymicTextBox";
             this.masterPatronymicTextBox.Size = new System.Drawing.Size(641, 26);
             this.masterPatronymicTextBox.TabIndex = 30;
+            this.masterPatronymicTextBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            this.masterPatronymicTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // masterNameTextBox
             // 
@@ -123,6 +125,8 @@
             this.masterNameTextBox.Name = "masterNameTextBox";
             this.masterNameTextBox.Size = new System.Drawing.Size(641, 26);
             this.masterNameTextBox.TabIndex = 29;
+            this.masterNameTextBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            this.masterNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // masterSurnameTextBox
             // 
@@ -131,6 +135,8 @@
             this.masterSurnameTextBox.Name = "masterSurnameTextBox";
             this.masterSurnameTextBox.Size = new System.Drawing.Size(641, 26);
             this.masterSurnameTextBox.TabIndex = 28;
+            this.masterSurnameTextBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            this.masterSurnameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // label9
             // 
@@ -196,6 +202,8 @@
             this.positionTextBox.Name = "positionTextBox";
             this.positionTextBox.Size = new System.Drawing.Size(259, 26);
             this.positionTextBox.TabIndex = 7;
+            this.positionTextBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            this.positionTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.positionTextBox_KeyPress);
             // 
             // label4
             // 
@@ -272,6 +280,8 @@
             this.clientPatronymicTextBox.Name = "clientPatronymicTextBox";
             this.clientPatronymicTextBox.Size = new System.Drawing.Size(630, 26);
             this.clientPatronymicTextBox.TabIndex = 30;
+            this.clientPatronymicTextBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            this.clientPatronymicTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // clientNameTextBox
             // 
@@ -280,6 +290,8 @@
             this.clientNameTextBox.Name = "clientNameTextBox";
             this.clientNameTextBox.Size = new System.Drawing.Size(630, 26);
             this.clientNameTextBox.TabIndex = 29;
+            this.clientNameTextBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            this.clientNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // clientSurnameTextBox
             // 
@@ -288,6 +300,8 @@
             this.clientSurnameTextBox.Name = "clientSurnameTextBox";
             this.clientSurnameTextBox.Size = new System.Drawing.Size(630, 26);
             this.clientSurnameTextBox.TabIndex = 28;
+            this.clientSurnameTextBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            this.clientSurnameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // label5
             // 
@@ -351,6 +365,7 @@
             this.ageTextBox.Name = "ageTextBox";
             this.ageTextBox.Size = new System.Drawing.Size(54, 26);
             this.ageTextBox.TabIndex = 8;
+            this.ageTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ageTextBox_KeyPress);
             // 
             // phoneTextBox
             // 
@@ -359,6 +374,7 @@
             this.phoneTextBox.Name = "phoneTextBox";
             this.phoneTextBox.Size = new System.Drawing.Size(177, 26);
             this.phoneTextBox.TabIndex = 7;
+            this.phoneTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phoneTextBox_KeyPress);
             // 
             // label7
             // 
