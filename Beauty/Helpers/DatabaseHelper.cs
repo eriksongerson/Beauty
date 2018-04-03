@@ -126,7 +126,7 @@ namespace Beauty
                     master.secondName = oleDbDataReader[2].ToString();
                     master.firstName = oleDbDataReader[3].ToString();
                     master.patronymic = oleDbDataReader[4].ToString();
-                    master.experience = Convert.ToInt32(oleDbDataReader[5].ToString());
+                    master.experience = oleDbDataReader[5].ToString();
                     master.position = oleDbDataReader[6].ToString();
                     masters.Add(master);
                 }

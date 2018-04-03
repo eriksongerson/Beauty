@@ -40,8 +40,6 @@
             this.backMasterButton = new System.Windows.Forms.Button();
             this.positionTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.experienceTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.editMasterDataGridView = new System.Windows.Forms.DataGridView();
@@ -60,11 +58,17 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.editClientDataGridView = new System.Windows.Forms.DataGridView();
+            this.label12 = new System.Windows.Forms.Label();
+            this.monthsNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.yearsNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.editInformationTabControl.SuspendLayout();
             this.editMastersTabPane.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.editMasterDataGridView)).BeginInit();
             this.editClientsTabPane.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.editClientDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monthsNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yearsNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // editInformationTabControl
@@ -82,6 +86,10 @@
             // 
             // editMastersTabPane
             // 
+            this.editMastersTabPane.Controls.Add(this.label12);
+            this.editMastersTabPane.Controls.Add(this.monthsNumericUpDown);
+            this.editMastersTabPane.Controls.Add(this.label3);
+            this.editMastersTabPane.Controls.Add(this.yearsNumericUpDown);
             this.editMastersTabPane.Controls.Add(this.masterPatronymicTextBox);
             this.editMastersTabPane.Controls.Add(this.masterNameTextBox);
             this.editMastersTabPane.Controls.Add(this.masterSurnameTextBox);
@@ -92,8 +100,6 @@
             this.editMastersTabPane.Controls.Add(this.backMasterButton);
             this.editMastersTabPane.Controls.Add(this.positionTextBox);
             this.editMastersTabPane.Controls.Add(this.label4);
-            this.editMastersTabPane.Controls.Add(this.label3);
-            this.editMastersTabPane.Controls.Add(this.experienceTextBox);
             this.editMastersTabPane.Controls.Add(this.label2);
             this.editMastersTabPane.Controls.Add(this.label1);
             this.editMastersTabPane.Controls.Add(this.editMasterDataGridView);
@@ -107,7 +113,7 @@
             // 
             // masterPatronymicTextBox
             // 
-            this.masterPatronymicTextBox.Location = new System.Drawing.Point(139, 343);
+            this.masterPatronymicTextBox.Location = new System.Drawing.Point(141, 333);
             this.masterPatronymicTextBox.MaxLength = 50;
             this.masterPatronymicTextBox.Name = "masterPatronymicTextBox";
             this.masterPatronymicTextBox.Size = new System.Drawing.Size(643, 26);
@@ -115,7 +121,7 @@
             // 
             // masterNameTextBox
             // 
-            this.masterNameTextBox.Location = new System.Drawing.Point(139, 303);
+            this.masterNameTextBox.Location = new System.Drawing.Point(141, 293);
             this.masterNameTextBox.MaxLength = 50;
             this.masterNameTextBox.Name = "masterNameTextBox";
             this.masterNameTextBox.Size = new System.Drawing.Size(643, 26);
@@ -123,7 +129,7 @@
             // 
             // masterSurnameTextBox
             // 
-            this.masterSurnameTextBox.Location = new System.Drawing.Point(139, 264);
+            this.masterSurnameTextBox.Location = new System.Drawing.Point(141, 254);
             this.masterSurnameTextBox.MaxLength = 50;
             this.masterSurnameTextBox.Name = "masterSurnameTextBox";
             this.masterSurnameTextBox.Size = new System.Drawing.Size(643, 26);
@@ -131,7 +137,7 @@
             // 
             // label9
             // 
-            this.label9.Location = new System.Drawing.Point(8, 342);
+            this.label9.Location = new System.Drawing.Point(8, 332);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(125, 28);
             this.label9.TabIndex = 21;
@@ -140,7 +146,7 @@
             // 
             // label8
             // 
-            this.label8.Location = new System.Drawing.Point(8, 302);
+            this.label8.Location = new System.Drawing.Point(8, 292);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(125, 28);
             this.label8.TabIndex = 20;
@@ -181,41 +187,24 @@
             // 
             // positionTextBox
             // 
-            this.positionTextBox.Location = new System.Drawing.Point(384, 384);
+            this.positionTextBox.Location = new System.Drawing.Point(523, 374);
             this.positionTextBox.MaxLength = 255;
             this.positionTextBox.Name = "positionTextBox";
-            this.positionTextBox.Size = new System.Drawing.Size(398, 26);
+            this.positionTextBox.Size = new System.Drawing.Size(259, 26);
             this.positionTextBox.TabIndex = 16;
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(257, 383);
+            this.label4.Location = new System.Drawing.Point(396, 372);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(121, 28);
             this.label4.TabIndex = 15;
             this.label4.Text = "Должность:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(182, 381);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 28);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "лет";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // experienceTextBox
-            // 
-            this.experienceTextBox.Location = new System.Drawing.Point(139, 383);
-            this.experienceTextBox.MaxLength = 2;
-            this.experienceTextBox.Name = "experienceTextBox";
-            this.experienceTextBox.Size = new System.Drawing.Size(37, 26);
-            this.experienceTextBox.TabIndex = 13;
-            // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(6, 383);
+            this.label2.Location = new System.Drawing.Point(8, 370);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(127, 28);
             this.label2.TabIndex = 12;
@@ -224,7 +213,7 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(8, 263);
+            this.label1.Location = new System.Drawing.Point(8, 253);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(125, 28);
             this.label1.TabIndex = 10;
@@ -275,7 +264,7 @@
             // 
             // clientPatronymicTextBox
             // 
-            this.clientPatronymicTextBox.Location = new System.Drawing.Point(152, 343);
+            this.clientPatronymicTextBox.Location = new System.Drawing.Point(152, 333);
             this.clientPatronymicTextBox.MaxLength = 50;
             this.clientPatronymicTextBox.Name = "clientPatronymicTextBox";
             this.clientPatronymicTextBox.Size = new System.Drawing.Size(630, 26);
@@ -283,7 +272,7 @@
             // 
             // clientNameTextBox
             // 
-            this.clientNameTextBox.Location = new System.Drawing.Point(152, 303);
+            this.clientNameTextBox.Location = new System.Drawing.Point(152, 293);
             this.clientNameTextBox.MaxLength = 50;
             this.clientNameTextBox.Name = "clientNameTextBox";
             this.clientNameTextBox.Size = new System.Drawing.Size(630, 26);
@@ -291,7 +280,7 @@
             // 
             // clientSurnameTextBox
             // 
-            this.clientSurnameTextBox.Location = new System.Drawing.Point(152, 264);
+            this.clientSurnameTextBox.Location = new System.Drawing.Point(152, 254);
             this.clientSurnameTextBox.MaxLength = 50;
             this.clientSurnameTextBox.Name = "clientSurnameTextBox";
             this.clientSurnameTextBox.Size = new System.Drawing.Size(630, 26);
@@ -299,7 +288,7 @@
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(8, 342);
+            this.label5.Location = new System.Drawing.Point(8, 332);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(138, 28);
             this.label5.TabIndex = 27;
@@ -308,7 +297,7 @@
             // 
             // label10
             // 
-            this.label10.Location = new System.Drawing.Point(8, 302);
+            this.label10.Location = new System.Drawing.Point(8, 292);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(138, 28);
             this.label10.TabIndex = 26;
@@ -317,7 +306,7 @@
             // 
             // label11
             // 
-            this.label11.Location = new System.Drawing.Point(8, 263);
+            this.label11.Location = new System.Drawing.Point(8, 253);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(138, 28);
             this.label11.TabIndex = 25;
@@ -356,7 +345,7 @@
             // 
             // ageTextBox
             // 
-            this.ageTextBox.Location = new System.Drawing.Point(503, 382);
+            this.ageTextBox.Location = new System.Drawing.Point(590, 371);
             this.ageTextBox.MaxLength = 3;
             this.ageTextBox.Name = "ageTextBox";
             this.ageTextBox.Size = new System.Drawing.Size(54, 26);
@@ -364,7 +353,7 @@
             // 
             // phoneTextBox
             // 
-            this.phoneTextBox.Location = new System.Drawing.Point(152, 382);
+            this.phoneTextBox.Location = new System.Drawing.Point(152, 371);
             this.phoneTextBox.MaxLength = 15;
             this.phoneTextBox.Name = "phoneTextBox";
             this.phoneTextBox.Size = new System.Drawing.Size(177, 26);
@@ -372,7 +361,7 @@
             // 
             // label7
             // 
-            this.label7.Location = new System.Drawing.Point(335, 382);
+            this.label7.Location = new System.Drawing.Point(422, 371);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(162, 26);
             this.label7.TabIndex = 14;
@@ -381,7 +370,7 @@
             // 
             // label6
             // 
-            this.label6.Location = new System.Drawing.Point(8, 382);
+            this.label6.Location = new System.Drawing.Point(8, 371);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(138, 26);
             this.label6.TabIndex = 13;
@@ -406,6 +395,50 @@
             this.editClientDataGridView.TabIndex = 0;
             this.editClientDataGridView.SelectionChanged += new System.EventHandler(this.editClientDataGridView_SelectionChanged);
             // 
+            // label12
+            // 
+            this.label12.Location = new System.Drawing.Point(299, 371);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(79, 25);
+            this.label12.TabIndex = 38;
+            this.label12.Text = "месяцев";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // monthsNumericUpDown
+            // 
+            this.monthsNumericUpDown.Location = new System.Drawing.Point(243, 371);
+            this.monthsNumericUpDown.Maximum = new decimal(new int[] {
+            11,
+            0,
+            0,
+            0});
+            this.monthsNumericUpDown.Name = "monthsNumericUpDown";
+            this.monthsNumericUpDown.Size = new System.Drawing.Size(50, 26);
+            this.monthsNumericUpDown.TabIndex = 37;
+            this.monthsNumericUpDown.ValueChanged += new System.EventHandler(this.monthsNumericUpDown_ValueChanged);
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(188, 371);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 26);
+            this.label3.TabIndex = 36;
+            this.label3.Text = "лет";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // yearsNumericUpDown
+            // 
+            this.yearsNumericUpDown.Location = new System.Drawing.Point(141, 371);
+            this.yearsNumericUpDown.Maximum = new decimal(new int[] {
+            70,
+            0,
+            0,
+            0});
+            this.yearsNumericUpDown.Name = "yearsNumericUpDown";
+            this.yearsNumericUpDown.Size = new System.Drawing.Size(41, 26);
+            this.yearsNumericUpDown.TabIndex = 35;
+            this.yearsNumericUpDown.ValueChanged += new System.EventHandler(this.yearsNumericUpDown_ValueChanged);
+            // 
             // EditInformationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -428,6 +461,8 @@
             this.editClientsTabPane.ResumeLayout(false);
             this.editClientsTabPane.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.editClientDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monthsNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yearsNumericUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -451,8 +486,6 @@
         private System.Windows.Forms.Button backMasterButton;
         private System.Windows.Forms.TextBox positionTextBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox experienceTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox masterPatronymicTextBox;
@@ -466,5 +499,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.NumericUpDown monthsNumericUpDown;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown yearsNumericUpDown;
     }
 }
