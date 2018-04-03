@@ -49,6 +49,7 @@
             this.entriesDataGridView.Name = "entriesDataGridView";
             this.entriesDataGridView.RowHeadersVisible = false;
             this.entriesDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.entriesDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.entriesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.entriesDataGridView.Size = new System.Drawing.Size(739, 418);
             this.entriesDataGridView.TabIndex = 0;
