@@ -12,7 +12,7 @@ namespace Beauty
 
         public static DataTable getMasterDataSource()
         {
-            return getDataTableByQuery("SELECT `id`, `number` as Номер, (`secondName` & ' ' & `firstName` & ' ' & `patronymic`) as ФИО, `experience` as Стаж, `position` as Должность FROM masters"); //id, number, (secondName & ' ' & firstName & ' ' & patronymic) as ФИО, experience, position 
+            return getDataTableByQuery("SELECT `id`, `number` as Номер, (`secondName` & ' ' & `firstName` & ' ' & `patronymic`) as ФИО, `experience` as Стаж, `position` as Должность FROM masters");
         }
 
         public static DataTable getClientDataSource()
@@ -44,7 +44,7 @@ namespace Beauty
 
         public static bool addNewMaster(Master master)
         {
-            return addByQuery($"INSERT INTO masters (`id`, `number`, `secondName`, `firstName`, `patronymic`, `experience`, `position`) VALUES ({master.id}, {master.number}, '{master.secondName}', '{master.firstName}', '{master.patronymic}', {master.experience}, '{master.position}');");
+            return addByQuery($"INSERT INTO masters (`id`, `number`, `secondName`, `firstName`, `patronymic`, `experience`, `position`) VALUES ({master.id}, {master.number}, '{master.secondName}', '{master.firstName}', '{master.patronymic}', '{master.experience}', '{master.position}');");
         }
 
         public static bool addNewClient(Client client)

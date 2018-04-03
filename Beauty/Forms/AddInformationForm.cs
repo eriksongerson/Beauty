@@ -61,7 +61,7 @@ namespace Beauty.Forms
 
         private void addMasterButton_Click(object sender, EventArgs e)
         {
-            regex = new Regex("^[A-Za-z0-9]+$");
+            Regex regex = new Regex("^[A-Za-z0-9]+$");
             string position = positionTextBox.Text;
             if (regex.IsMatch(position))
             {
@@ -69,7 +69,7 @@ namespace Beauty.Forms
                 return;
             }
 
-            string experience = yearsNumericUpDown.Value + "." + monthsNumericUpDown.Value;
+            string experience = yearsNumericUpDown.Value + "," + monthsNumericUpDown.Value;
             string Surname = masterSurnameTextBox.Text;
             string Name = masterNameTextBox.Text;
             string Patronymic = masterPatronymicTextBox.Text;

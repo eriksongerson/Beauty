@@ -118,36 +118,14 @@ namespace Beauty.Forms
 
         private void editMasterButton_Click(object sender, EventArgs e)
         {
-            Regex regex = new Regex("^[А-ЯЁ][а-яё]{2,50}$");
-
-            string Surname = masterSurnameTextBox.Text;
-            if (!regex.IsMatch(Surname))
-            {
-                MessageBox.Show("Введите Фамилию в верном формате (формат: Иванов).");
-                return;
-            }
-            string Name = masterNameTextBox.Text;
-            if (!regex.IsMatch(Name))
-            {
-                MessageBox.Show("Введите Имя в верном формате (формат: Иван).");
-                return;
-            }
-            string Patronymic = masterPatronymicTextBox.Text;
-            if (!regex.IsMatch(Patronymic))
-            {
-                MessageBox.Show("Введите Отчество в верном формате (формат: Иванович).");
-                return;
-            }
-            regex = new Regex("^[A-Za-z0-9]+$");
             string position = positionTextBox.Text;
-            if (regex.IsMatch(position))
-            {
-                MessageBox.Show("Нельзя использовать цифры или иностранные символы.");
-                return;
-            }
+            string experience = yearsNumericUpDown.Value + "," + monthsNumericUpDown.Value;
+            string Surname = masterSurnameTextBox.Text;
+            string Name = masterNameTextBox.Text;
+            string Patronymic = masterPatronymicTextBox.Text;
 
             selectedMaster.setFullName(Surname, Name, Patronymic);
-            selectedMaster.experience = yearsNumericUpDown.Value + "." + monthsNumericUpDown.Value;
+            selectedMaster.experience = yearsNumericUpDown.Value + "," + monthsNumericUpDown.Value;
             selectedMaster.position = positionTextBox.Text;
 
             DatabaseHelper.editMaster(selectedMaster);
@@ -177,7 +155,7 @@ namespace Beauty.Forms
                 masterNameTextBox.Text = selectedMaster.firstName;
                 masterPatronymicTextBox.Text = selectedMaster.patronymic;
                 string exp = selectedMaster.experience.ToString();
-                var arr = exp.Split('.');
+                var arr = exp.Split(',');
                 yearsNumericUpDown.Value = Convert.ToInt32(arr[0]);
                 monthsNumericUpDown.Value = Convert.ToInt32(arr[1]);
                 positionTextBox.Text = selectedMaster.position;
