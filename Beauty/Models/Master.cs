@@ -4,7 +4,6 @@ namespace Beauty
 {
     public class Master
     {
-
         public int id { get; set; }
         public int number { get; set; }
         public string secondName { get; set; }
@@ -12,12 +11,8 @@ namespace Beauty
         public string patronymic { get; set; }
         public string experience { get; set; }
         public string position { get; set; }
-
-        public Master()
-        {
-
-        }
-
+        // конструкторы класса
+        public Master(){}
         public Master(string Surname, string Name, string Patronymic, string experience, string position)
         {
             this.secondName = Surname;
@@ -33,7 +28,6 @@ namespace Beauty
                 isUnique = DatabaseHelper.CheckUniqueNumberClient(this.number);
             }
         }
-
         public Master(int id, int number, string secondName, string firstName, string patronymic, string experience, string position)
         {
             this.id = id;
@@ -44,17 +38,17 @@ namespace Beauty
             this.experience = experience;
             this.position = position;
         }
-
+        // функция получения полного имени мастера
         public string getFullName()
         {
             return this.secondName + " " + this.firstName + " " + patronymic;
         }
+        // и его установки
         public void setFullName(string secondName, string firstName, string patronymic)
         {
             this.secondName = secondName;
             this.firstName = firstName;
             this.patronymic = patronymic;
         }
-
     }
 }

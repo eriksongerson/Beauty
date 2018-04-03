@@ -9,12 +9,12 @@ namespace Beauty.Forms
         {
             InitializeComponent();
         }
-
+        // кнопка выхода 
         private void exitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
+        // кнопка перехода на форму добавления информации
         private void addInformationButton_Click(object sender, EventArgs e)
         {
             AddInformationForm addInformationForm = new AddInformationForm();
@@ -23,7 +23,7 @@ namespace Beauty.Forms
             if(addInformationForm.ShowDialog() != DialogResult.OK)
                 Close();
         }
-
+        // кнопка перехода на форму изменения информации
         private void editInformationButton_Click(object sender, EventArgs e)
         {
             EditInformationForm editInformationForm = new EditInformationForm();
@@ -31,7 +31,7 @@ namespace Beauty.Forms
             if(editInformationForm.ShowDialog() != DialogResult.OK)
                 Close();
         }
-
+        // кнопка перехода на форму создания записи
         private void entryOnVisitButton_Click(object sender, EventArgs e)
         {
             NewEntry newEntry = new NewEntry();
@@ -39,7 +39,7 @@ namespace Beauty.Forms
             if(newEntry.ShowDialog() != DialogResult.OK)
                 Close();
         }
-
+        // кнопка перехода на форму записей
         private void historyButton_Click(object sender, EventArgs e)
         {
             Entries entries = new Entries();

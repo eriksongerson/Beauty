@@ -7,18 +7,17 @@ namespace Beauty.Forms
 {
     public partial class AddInformationForm : Form
     {
+        // переменная для помощи в навигации
         public string nextWay = "";
-
         public AddInformationForm()
         {
             InitializeComponent();
         }
-
         private void AddInformationForm_Load(object sender, EventArgs e)
         {
             reloadMasterDataGridView();
         }
-
+        // функция загрузки таблиц при выборе вкладки
         private void informationTabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(informationTabControl.SelectedTab == mastersTabPage)
@@ -30,17 +29,15 @@ namespace Beauty.Forms
                 reloadClientDataGridView();
             }
         }
-
+        // кнопки выхода из формы
         private void button3_Click(object sender, EventArgs e)
         {
             CloseThis();
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             CloseThis();
         }
-
         private void CloseThis()
         {
             if (nextWay == "startup")
@@ -58,7 +55,7 @@ namespace Beauty.Forms
                     Close();
             }
         }
-
+        // добавление мастера
         private void addMasterButton_Click(object sender, EventArgs e)
         {
             Regex regex = new Regex("^[A-Za-z0-9]+$");
@@ -91,7 +88,7 @@ namespace Beauty.Forms
                 return;
             }
         }
-
+        // обновление таблицы мастеров
         private void reloadMasterDataGridView()
         {
             addMasterDataGridView.DataSource = DatabaseHelper.getMasterDataSource();
@@ -101,7 +98,7 @@ namespace Beauty.Forms
             addMasterDataGridView.Columns[4].Width = 200;
             addMasterDataGridView.ClearSelection();
         }
-
+        // обновление таблицы клиентов
         private void reloadClientDataGridView()
         {
             addClientDataGridView.DataSource = DatabaseHelper.getClientDataSource();
@@ -111,7 +108,7 @@ namespace Beauty.Forms
             addClientDataGridView.Columns[4].Width = 90;
             addClientDataGridView.ClearSelection();
         }
-
+        // добавление клиента
         private void addClientButton_Click(object sender, EventArgs e)
         {
             Regex regex = new Regex("^((8|\\+7)[\\- ]?)?(\\(?\\d{3}\\)?[\\- ]?)?[\\d\\- ]{7,10}$");
@@ -149,7 +146,7 @@ namespace Beauty.Forms
             }
 
         }
-
+        // изменение полей при выборе количества лет стажа
         List<int> firstYears = new List<int>(){ 1, 21, 31, 41, 51, 61 };//год;
         List<int> secondYears = new List<int>(){ 2, 3, 4, 22, 23, 24, 32, 33, 34, 42, 43, 44, 52, 53, 54, 62, 63, 64 };//года
         private void yearsNumericUpDown_ValueChanged(object sender, EventArgs e)
@@ -164,6 +161,7 @@ namespace Beauty.Forms
                 label3.Text = "года";
             }else { label3.Text = "лет"; }
         }
+        // функция проверки ввода русских букв
         private void checkRussianWords(KeyPressEventArgs e)
         {
             string ch = e.KeyChar.ToString();
@@ -173,9 +171,7 @@ namespace Beauty.Forms
                 e.Handled = true;
             }
         }
-
-        List<int> firstMonths = new List<int>(){  };//месяц
-
+        // изменение полей при выборе количества месяцев стажа
         private void monthsNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
             int months = Convert.ToInt32(monthsNumericUpDown.Value);
@@ -188,7 +184,7 @@ namespace Beauty.Forms
                 label12.Text = "месяца";
             }else { label12.Text = "месяцев"; }
         }
-        
+        // событие, привязанное к 6 текстовым полям, которые проверятся на наличие только русских букв
         private void textBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             checkRussianWords(e);

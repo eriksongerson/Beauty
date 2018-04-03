@@ -14,7 +14,7 @@ namespace Beauty.Forms
         {
             reloadDataGridView();
         }
-
+        // кнопка выхода из формы
         private void backButton_Click(object sender, EventArgs e)
         {
             StartupForm startupForm = new StartupForm();
@@ -27,7 +27,7 @@ namespace Beauty.Forms
         {
             deleteButton.Enabled = true;
         }
-
+        // обновление таблицы
         void reloadDataGridView()
         {
             entriesDataGridView.DataSource = DatabaseHelper.getEntriesDataSource();
@@ -39,7 +39,7 @@ namespace Beauty.Forms
             entriesDataGridView.Columns[5].Width = 100;
             entriesDataGridView.ClearSelection();
         }
-
+        // удаление записи на прием
         private void deleteButton_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Удалить запись?", "", MessageBoxButtons.YesNo);

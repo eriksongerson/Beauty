@@ -7,8 +7,9 @@ namespace Beauty.Forms
 {
     public partial class EditInformationForm : Form
     {
-        private static Master selectedMaster;
-        private static Client selectedClient;
+        // переменные для сохранения выбранных
+        private static Master selectedMaster;// мастера
+        private static Client selectedClient;// клиента
 
         public EditInformationForm()
         {
@@ -20,7 +21,7 @@ namespace Beauty.Forms
             reloadMasterTable();
             clearAllFields();
         }
-
+        // функция загрузки таблиц при смене вкладок
         private void editInformationTabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (editInformationTabControl.SelectedTab == editMastersTabPane)
@@ -34,13 +35,13 @@ namespace Beauty.Forms
                 clearAllFields();
             }
         }
-
+        // функция очистки всех полей 
         private void clearAllFields()
         {
             cleanClientFields();
             cleanMasterFields();
         }
-
+        // функция загрузки мастеров
         private void reloadMasterTable()
         {
             editMasterDataGridView.DataSource = DatabaseHelper.getMasterDataSource();
@@ -50,7 +51,7 @@ namespace Beauty.Forms
             editMasterDataGridView.Columns[4].Width = 200;
             editMasterDataGridView.ClearSelection();
         }
-
+        // функция загрузки клиентов
         private void reloadClientTable()
         {
             editClientDataGridView.DataSource = DatabaseHelper.getClientDataSource();
@@ -60,7 +61,7 @@ namespace Beauty.Forms
             editClientDataGridView.Columns[4].Width = 90;
             editClientDataGridView.ClearSelection();
         }
-
+        // функция очистки полей на вкладке "Мастера"
         private void cleanMasterFields()
         {
             masterSurnameTextBox.Text = "";
@@ -72,6 +73,7 @@ namespace Beauty.Forms
             deleteMasterButton.Enabled = false;
             editMasterButton.Enabled = false;
         }
+        // функция очистки полей на вкладке "Клиенты"
         private void cleanClientFields()
         {
             clientSurnameTextBox.Text = "";
@@ -82,7 +84,7 @@ namespace Beauty.Forms
             deleteClientButton.Enabled = false;
             editClientButton.Enabled = false;
         }
-
+        // закрытие формы
         private void backMasterButton_Click(object sender, EventArgs e)
         {
             StartupForm startupForm = new StartupForm();
@@ -90,7 +92,6 @@ namespace Beauty.Forms
             if(startupForm.ShowDialog() != DialogResult.OK)
                 Close();
         }
-
         private void backClientButton_Click(object sender, EventArgs e)
         {
             StartupForm startupForm = new StartupForm();
@@ -98,7 +99,7 @@ namespace Beauty.Forms
             if(startupForm.ShowDialog() != DialogResult.OK)
                 Close();
         }
-
+        // удаление мастера
         private void deleteMasterButton_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Вы действительно хотите удалить этого мастера из базы данных?", "Удалить?", MessageBoxButtons.YesNo);
@@ -115,7 +116,7 @@ namespace Beauty.Forms
                 return;
             }
         }
-
+        // изменение мастера
         private void editMasterButton_Click(object sender, EventArgs e)
         {
             string position = positionTextBox.Text;
@@ -133,7 +134,7 @@ namespace Beauty.Forms
             reloadMasterTable();
             cleanMasterFields();
         }
-
+        // заполнение полей при выборе записи таблицы мастеров
         private void editMasterDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             foreach (DataGridViewRow row in editMasterDataGridView.SelectedRows)
@@ -148,7 +149,6 @@ namespace Beauty.Forms
 
                 selectedMaster = new Master(id, number, arr[0], arr[1], arr[2], experience, position);
             }
-
             if (selectedMaster != null)
             {
                 masterSurnameTextBox.Text = selectedMaster.secondName;
@@ -160,11 +160,10 @@ namespace Beauty.Forms
                 monthsNumericUpDown.Value = Convert.ToInt32(arr[1]);
                 positionTextBox.Text = selectedMaster.position;
             }
-
             deleteMasterButton.Enabled = true;
             editMasterButton.Enabled = true;
         }
-
+        // заполнение полей при выборе записи таблицы клиентов
         private void editClientDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             foreach (DataGridViewRow row in editClientDataGridView.SelectedRows)
@@ -192,7 +191,7 @@ namespace Beauty.Forms
             deleteClientButton.Enabled = true;
             editClientButton.Enabled = true;
         }
-
+        // удаление клиента
         private void deleteClientButton_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Вы действительно хотите удалить этого клиента из базы данных?", "Удалить?", MessageBoxButtons.YesNo);
@@ -209,51 +208,25 @@ namespace Beauty.Forms
                 return;
             }
         }
-
+        // изменение клиента
         private void editClientButton_Click(object sender, EventArgs e)
         {
-
-            Regex regex = new Regex("^[А-ЯЁ][а-яё]{2,50}$");
-            string Surname = clientSurnameTextBox.Text;
-            if (!regex.IsMatch(Surname))
-            {
-                MessageBox.Show("Введите Фамилию в верном формате (формат: Иванов).");
-                return;
-            }
-            string Name = clientNameTextBox.Text;
-            if (!regex.IsMatch(Name))
-            {
-                MessageBox.Show("Введите Имя в верном формате (формат: Иван).");
-                return;
-            }
-            string Patronymic = clientPatronymicTextBox.Text;
-            if (!regex.IsMatch(Patronymic))
-            {
-                MessageBox.Show("Введите Отчество в верном формате (формат: Иванович).");
-                return;
-            }
-
-            regex = new Regex("^((8|\\+7)[\\- ]?)?(\\(?\\d{3}\\)?[\\- ]?)?[\\d\\- ]{7,10}$");
+            Regex regex = new Regex("^((8|\\+7)[\\- ]?)?(\\(?\\d{3}\\)?[\\- ]?)?[\\d\\- ]{7,10}$");
             string phone = phoneTextBox.Text;
             if (!regex.IsMatch(phone))
             {
                 MessageBox.Show("Введите номер в правильном формате");
                 return;
             }
-
-            regex = new Regex("^[0-9]{1,2}$");
-            string ageString = ageTextBox.Text;
-            if (!regex.IsMatch(ageString))
-            {
-                MessageBox.Show("При указании возраста можно использовать только цифры.");
-                return;
-            }
-            int age = Convert.ToInt32(ageString);
-            if (age > 120 || age < 0)
+            int age = Convert.ToInt32(ageTextBox.Text);
+            if(age > 120 || age <= 0)
             {
                 MessageBox.Show("Недопустимый возраст.");
                 return;
             }
+            string Surname = clientSurnameTextBox.Text;
+            string Name = clientNameTextBox.Text;
+            string Patronymic = clientPatronymicTextBox.Text;
 
             selectedClient.setFullName(Surname, Name, Patronymic);
             selectedClient.phone = phone;
@@ -264,7 +237,7 @@ namespace Beauty.Forms
             reloadClientTable();
             cleanClientFields();
         }
-
+        // изменение полей при выборе количества лет стажа
         List<int> first = new List<int>(){ 1, 21, 31, 41, 51, 61 };//год;
         List<int> second = new List<int>(){ 2, 3, 4, 22, 23, 24, 32, 33, 34, 42, 43, 44, 52, 53, 54, 62, 63, 64 };//года
         private void yearsNumericUpDown_ValueChanged(object sender, EventArgs e)
@@ -280,7 +253,7 @@ namespace Beauty.Forms
             }else { label3.Text = "лет"; }
 
         }
-
+        // изменение полей при выборе количества месяцев стажа
         private void monthsNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
             int months = Convert.ToInt32(monthsNumericUpDown.Value);
@@ -293,6 +266,7 @@ namespace Beauty.Forms
                 label12.Text = "месяца";
             }else { label12.Text = "месяцев"; }
         }
+        // функция проверки ввода русских букв
         private void checkRussianWords(KeyPressEventArgs e)
         {
             string ch = e.KeyChar.ToString();
@@ -302,10 +276,7 @@ namespace Beauty.Forms
                 e.Handled = true;
             }
         }
-        private void experienceTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
-        }
+        // событие, привязанное к 6 текстовым полям, которые проверятся на наличие только русских букв
         private void textBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             checkRussianWords(e);

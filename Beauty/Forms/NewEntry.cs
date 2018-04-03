@@ -9,7 +9,7 @@ namespace Beauty.Forms
     {
         private static List<Master> masters;
         private static List<Client> clients;
-
+        // переменные для проверки полей 
         string hardwiredDate;
         string hardwiredTime;
 
@@ -22,7 +22,7 @@ namespace Beauty.Forms
         {
             hardwiredDate = dateMaskedTextBox.Text;
             hardwiredTime = timeMaskedTextBox.Text;
-
+            // Заполнение comboBox'ов
             masters = DatabaseHelper.getMasters();
             clients = DatabaseHelper.getClients();
 
@@ -42,7 +42,7 @@ namespace Beauty.Forms
             }
             clientComboBox.Items.AddRange(items);
         }
-
+        // кнопка перехода на форму создания записей
         private void newClientButton_Click(object sender, EventArgs e)
         {
             AddInformationForm addInformationForm = new AddInformationForm();
@@ -51,14 +51,15 @@ namespace Beauty.Forms
             if(addInformationForm.ShowDialog() != DialogResult.OK)
                 Close();
         }
-
+        // запрет на ввод всего, кроме цифр
         private void priceTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = char.IsNumber(e.KeyChar) || e.KeyChar == 8 ? false : true;
         }
-
+        // создание записи
         private void makeEntryButton_Click(object sender, EventArgs e)
         {
+            // проверка полей
             string priceLine = priceTextBox.Text;
             if (priceLine == "")
             {
@@ -74,7 +75,7 @@ namespace Beauty.Forms
 
             Master master = null;
             Client client = null;
-
+            // получение мастера
             string MasterLine = masterComboBox.SelectedItem.ToString();
             foreach (var item in masters)
             {
@@ -83,7 +84,7 @@ namespace Beauty.Forms
                     master = item;
                 }
             }
-
+            // получение клиента
             string ClientLine = clientComboBox.SelectedItem.ToString();
             foreach (var item in clients)
             {
@@ -92,7 +93,7 @@ namespace Beauty.Forms
                     client = item;
                 }
             }
-
+            // проверка на правильность введенной даты
             Regex regex = new Regex("^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\\d\\d$");
             string date = dateMaskedTextBox.Text;
             if (!regex.IsMatch(date))
@@ -100,7 +101,7 @@ namespace Beauty.Forms
                 MessageBox.Show("Дата записи введена некорректно.");
                 return;
             }
-
+            // проверка на правильность введенного времени
             regex = new Regex("^(0[0-9]|1[0-9]|2[0-3])(:[0-5][0-9])$");
             string time = timeMaskedTextBox.Text;
             if (!regex.IsMatch(time))
@@ -108,7 +109,7 @@ namespace Beauty.Forms
                 MessageBox.Show("Время записи введено некорректно.");
                 return;
             }
-
+            // создание записи
             Entry entry;
             if (master != null && client != null)
             {
@@ -130,17 +131,15 @@ namespace Beauty.Forms
             if(startupForm.ShowDialog() != DialogResult.OK)
                 Close();
         }
-
+        // если поля не пусты, должна активироваться кнопка
         private void masterComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             checkForButton();
         }
-
         private void clientComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             checkForButton();
         }
-
         private void priceTextBox_TextChanged(object sender, EventArgs e)
         {
             checkForButton();
@@ -149,12 +148,11 @@ namespace Beauty.Forms
         {
             checkForButton();
         }
-
         private void timeMaskedTextBox_TextChanged(object sender, EventArgs e)
         {
             checkForButton();
         }
-
+        // проверка на заполненность полей
         private void checkForButton()
         {
             if(clientComboBox.SelectedIndex != -1 
@@ -169,12 +167,11 @@ namespace Beauty.Forms
                 makeEntryButton.Enabled = false;
             }
         }
-
+        // проверка вводимых символов
         private void dateMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsNumber(e.KeyChar) || e.KeyChar != 8;
         }
-
         private void timeMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsNumber(e.KeyChar) || e.KeyChar != 8;
