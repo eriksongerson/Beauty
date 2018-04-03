@@ -1,4 +1,5 @@
-﻿ using System;
+using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -60,18 +61,6 @@ namespace Beauty.Forms
 
         private void addMasterButton_Click(object sender, EventArgs e)
         {
-            Regex regex = new Regex("^[0-9]{1,2}(\\.(0|1|2|3|4|5|6|7|8|9|10|11|12))?$");
-            string experienceString = experienceTextBox.Text;
-            if (!regex.IsMatch(experienceString))
-            {
-
-            }
-            int experience = Convert.ToInt32(experienceString);
-            if(experience < 0 || experience >= 100)
-            {
-                MessageBox.Show("Введите адекватный стаж.");
-                return;
-            }
             regex = new Regex("^[A-Za-z0-9]+$");
             string position = positionTextBox.Text;
             if (regex.IsMatch(position))
@@ -80,6 +69,7 @@ namespace Beauty.Forms
                 return;
             }
 
+            string experience = yearsNumericUpDown.Value + "." + monthsNumericUpDown.Value;
             string Surname = masterSurnameTextBox.Text;
             string Name = masterNameTextBox.Text;
             string Patronymic = masterPatronymicTextBox.Text;
@@ -91,7 +81,8 @@ namespace Beauty.Forms
                 masterSurnameTextBox.Text = "";
                 masterNameTextBox.Text = "";
                 masterPatronymicTextBox.Text = "";
-                experienceTextBox.Text = "";
+                yearsNumericUpDown.Value = 0;
+                monthsNumericUpDown.Value = 0;
                 positionTextBox.Text = "";
             }
             else
@@ -159,9 +150,19 @@ namespace Beauty.Forms
 
         }
 
-        private void experienceTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        List<int> firstYears = new List<int>(){ 1, 21, 31, 41, 51, 61 };//год;
+        List<int> secondYears = new List<int>(){ 2, 3, 4, 22, 23, 24, 32, 33, 34, 42, 43, 44, 52, 53, 54, 62, 63, 64 };//года
+        private void yearsNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
-            
+            int years = Convert.ToInt32(yearsNumericUpDown.Value);
+
+            if (firstYears.Contains(years))
+            {
+                label3.Text = "год";
+            }else if (secondYears.Contains(years))
+            {
+                label3.Text = "года";
+            }else { label3.Text = "лет"; }
         }
         private void checkRussianWords(KeyPressEventArgs e)
         {
@@ -173,6 +174,21 @@ namespace Beauty.Forms
             }
         }
 
+        List<int> firstMonths = new List<int>(){  };//месяц
+
+        private void monthsNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            int months = Convert.ToInt32(monthsNumericUpDown.Value);
+
+            if (months == 1)
+            {
+                label12.Text = "месяц";
+            }else if (months == 2 || months == 3)
+            {
+                label12.Text = "месяца";
+            }else { label12.Text = "месяцев"; }
+        }
+        
         private void textBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             checkRussianWords(e);
