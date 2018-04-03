@@ -30,6 +30,10 @@
         {
             this.informationTabControl = new System.Windows.Forms.TabControl();
             this.mastersTabPage = new System.Windows.Forms.TabPage();
+            this.label12 = new System.Windows.Forms.Label();
+            this.monthsNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.yearsNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.masterPatronymicTextBox = new System.Windows.Forms.TextBox();
             this.masterNameTextBox = new System.Windows.Forms.TextBox();
             this.masterSurnameTextBox = new System.Windows.Forms.TextBox();
@@ -56,17 +60,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.addClientDataGridView = new System.Windows.Forms.DataGridView();
-            this.yearsNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.monthsNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.label12 = new System.Windows.Forms.Label();
             this.informationTabControl.SuspendLayout();
             this.mastersTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.monthsNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yearsNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addMasterDataGridView)).BeginInit();
             this.clientsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.addClientDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yearsNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.monthsNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // informationTabControl
@@ -107,6 +107,52 @@
             this.mastersTabPage.TabIndex = 0;
             this.mastersTabPage.Text = "Мастера";
             this.mastersTabPage.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            this.label12.Location = new System.Drawing.Point(299, 373);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(79, 25);
+            this.label12.TabIndex = 34;
+            this.label12.Text = "месяцев";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // monthsNumericUpDown
+            // 
+            this.monthsNumericUpDown.Location = new System.Drawing.Point(243, 373);
+            this.monthsNumericUpDown.Maximum = new decimal(new int[] {
+            11,
+            0,
+            0,
+            0});
+            this.monthsNumericUpDown.Name = "monthsNumericUpDown";
+            this.monthsNumericUpDown.ReadOnly = true;
+            this.monthsNumericUpDown.Size = new System.Drawing.Size(50, 26);
+            this.monthsNumericUpDown.TabIndex = 33;
+            this.monthsNumericUpDown.ValueChanged += new System.EventHandler(this.monthsNumericUpDown_ValueChanged);
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(188, 372);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 26);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "лет";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // yearsNumericUpDown
+            // 
+            this.yearsNumericUpDown.Location = new System.Drawing.Point(141, 372);
+            this.yearsNumericUpDown.Maximum = new decimal(new int[] {
+            70,
+            0,
+            0,
+            0});
+            this.yearsNumericUpDown.Name = "yearsNumericUpDown";
+            this.yearsNumericUpDown.ReadOnly = true;
+            this.yearsNumericUpDown.Size = new System.Drawing.Size(41, 26);
+            this.yearsNumericUpDown.TabIndex = 31;
+            this.yearsNumericUpDown.ValueChanged += new System.EventHandler(this.yearsNumericUpDown_ValueChanged);
             // 
             // masterPatronymicTextBox
             // 
@@ -245,7 +291,7 @@
             this.addMasterDataGridView.RowHeadersWidth = 40;
             this.addMasterDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.addMasterDataGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.addMasterDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.addMasterDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.addMasterDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.addMasterDataGridView.Size = new System.Drawing.Size(786, 247);
             this.addMasterDataGridView.TabIndex = 0;
@@ -412,54 +458,10 @@
             this.addClientDataGridView.ReadOnly = true;
             this.addClientDataGridView.RowHeadersVisible = false;
             this.addClientDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.addClientDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.addClientDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.addClientDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.addClientDataGridView.Size = new System.Drawing.Size(786, 247);
             this.addClientDataGridView.TabIndex = 0;
-            // 
-            // yearsNumericUpDown
-            // 
-            this.yearsNumericUpDown.Location = new System.Drawing.Point(141, 372);
-            this.yearsNumericUpDown.Maximum = new decimal(new int[] {
-            70,
-            0,
-            0,
-            0});
-            this.yearsNumericUpDown.Name = "yearsNumericUpDown";
-            this.yearsNumericUpDown.Size = new System.Drawing.Size(41, 26);
-            this.yearsNumericUpDown.TabIndex = 31;
-            this.yearsNumericUpDown.ValueChanged += new System.EventHandler(this.yearsNumericUpDown_ValueChanged);
-            // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(188, 372);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 26);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "лет";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // monthsNumericUpDown
-            // 
-            this.monthsNumericUpDown.Location = new System.Drawing.Point(243, 373);
-            this.monthsNumericUpDown.Maximum = new decimal(new int[] {
-            11,
-            0,
-            0,
-            0});
-            this.monthsNumericUpDown.Name = "monthsNumericUpDown";
-            this.monthsNumericUpDown.Size = new System.Drawing.Size(50, 26);
-            this.monthsNumericUpDown.TabIndex = 33;
-            this.monthsNumericUpDown.ValueChanged += new System.EventHandler(this.monthsNumericUpDown_ValueChanged);
-            // 
-            // label12
-            // 
-            this.label12.Location = new System.Drawing.Point(299, 373);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(79, 25);
-            this.label12.TabIndex = 34;
-            this.label12.Text = "месяцев";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // AddInformationForm
             // 
@@ -479,12 +481,12 @@
             this.informationTabControl.ResumeLayout(false);
             this.mastersTabPage.ResumeLayout(false);
             this.mastersTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.monthsNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yearsNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addMasterDataGridView)).EndInit();
             this.clientsTabPage.ResumeLayout(false);
             this.clientsTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.addClientDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yearsNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.monthsNumericUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
