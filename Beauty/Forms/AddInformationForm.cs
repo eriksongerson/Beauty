@@ -160,6 +160,7 @@ namespace Beauty.Forms
             {
                 label3.Text = "года";
             }else { label3.Text = "лет"; }
+            CheckForMasterButton();
         }
         // функция проверки ввода русских букв
         private void checkRussianWords(KeyPressEventArgs e)
@@ -183,6 +184,7 @@ namespace Beauty.Forms
             {
                 label12.Text = "месяца";
             }else { label12.Text = "месяцев"; }
+            CheckForMasterButton();
         }
         // событие, привязанное к 6 текстовым полям, которые проверятся на наличие только русских букв
         private void textBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -206,7 +208,37 @@ namespace Beauty.Forms
                 e.Handled = true;
             }
         }
-        private void textBox_TextChanged(object sender, EventArgs e)
+        private void CheckForMasterButton()
+        {
+            if(masterSurnameTextBox.Text != "" &&
+                masterNameTextBox.Text != "" &&
+                masterPatronymicTextBox.Text != "" &&
+                positionTextBox.Text != "" &&
+                ( yearsNumericUpDown.Value != 0 || monthsNumericUpDown.Value != 0 ))
+            {
+                addMasterButton.Enabled = true;
+            }
+            else
+            {
+                addMasterButton.Enabled = false;
+            }
+        }
+        private void checkForClientButton()
+        {
+            if(clientSurnameTextBox.Text != "" &&
+                clientNameTextBox.Text != "" &&
+                clientPatronymicTextBox.Text != "" &&
+                phoneTextBox.Text != "" &&
+                ageTextBox.Text != "")
+            {
+                addClientButton.Enabled = true;
+            }
+            else
+            {
+                addClientButton.Enabled = false;
+            }
+        }
+        private void masterTextBox_TextChanged(object sender, EventArgs e)
         {
             TextBox textBox = (TextBox) sender;
 
@@ -218,6 +250,33 @@ namespace Beauty.Forms
             textBox.Text = string.Concat(arr);
 
             textBox.Select(textBox.Text.Length, 0);
+
+            CheckForMasterButton();
+        }
+        private void clientTextBox_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = (TextBox) sender;
+
+            string Line = textBox.Text;
+            var arr = Line.ToCharArray();
+            try{
+                arr[0] = char.ToUpper(arr[0]);
+            }catch(IndexOutOfRangeException){ }
+            textBox.Text = string.Concat(arr);
+
+            textBox.Select(textBox.Text.Length, 0);
+
+            checkForClientButton();
+        }
+
+        private void phoneTextBox_TextChanged(object sender, EventArgs e)
+        {
+            checkForClientButton();
+        }
+
+        private void ageTextBox_TextChanged(object sender, EventArgs e)
+        {
+            checkForClientButton();
         }
     }
 }
